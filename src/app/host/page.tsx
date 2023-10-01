@@ -2,8 +2,8 @@ import dynamic from 'next/dynamic'
 
 const Presentation = dynamic(() => import('@/components/presentation'), { ssr: false })
 
-export default function Home() {
+export default function Host() {
   return (
-    <Presentation isHost={false} />
+    <Presentation isHost />
   )
 }
