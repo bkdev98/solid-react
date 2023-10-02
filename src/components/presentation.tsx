@@ -16,7 +16,9 @@ export default function Presentation({ isHost }: { isHost: boolean }) {
     if (!window.Reveal) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       reveal = new RevealJS({
-          embedded: true, 
+          embedded: true,
+          hash: true,
+          history: true,
           plugins: [
             RevealMarkdown,
             RevealHighlight,
