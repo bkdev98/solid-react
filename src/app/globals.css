@@ -6,6 +6,18 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --r-heading-font: unset !important;
+  --r-heading-font-weight: 700 !important;
+  --r-heading1-size: 2.8em !important;
+  --r-heading2-size: 2.2em !important;
+  --r-heading3-size: 1.45em !important;
+  --r-heading4-size: 1em !important;
+  --r-heading5-size: 0.7em !important;
+  --r-main-font: unset !important;
+  --r-main-font-size: 36px !important;
+  --r-heading-text-transform: unset !important;
+  --r-link-color: #E13440 !important;
+  --r-selection-background-color: #E13440 !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +36,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+hr {
+  margin: 1em 0;
+}
+
+blockquote {
+  width: 86% !important;
 }
