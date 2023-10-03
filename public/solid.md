@@ -29,13 +29,23 @@ Note: And so What is Software? There a reason Software is "Soft" because we have
 
 #### Easy to change and extend <!-- .element: class="fragment" data-fragment-index="3" -->
 
-Note: Unfortunately, you may experience the opposite of this in your career. It may depend on where you work and what you work on. But in general, larger frameworks tend to be harder to change and extend. That ultimately may be due to dependencies aka coupling.
+Note: Unfortunately, you may experience the opposite of this in your career. It may depend on where you work and what you work on. Then one morning your boss yell at you because your component is 300 lines long.
+
+
+
+<img src="/images/stackoverflow-1.png" class="fragment semi-fade-out" data-fragment-index="1" style="width: 100%; height: 100%" />
+<img src="/images/stackoverflow-2.png" class="fragment fade-in-then-out" data-fragment-index="1" style="position: absolute; width: 100%; top: 10%" />
+<img src="/images/stackoverflow-3.png" class="fragment" data-fragment-index="2" style="position: absolute; width: 100%; top: 35%" />
+
+Note: This talk today hopefully will help you to avoid this situation. And I'll not saying that you should write a 3 or 300 lines long component. But you'll have an idea when and how to split them up.
 
 
 
 > "Coupling is the enemy of change, because it links together things that must change in parallel."
 
 (David Thomas & Andrew Hunt, The Pragmatic Programmer)
+
+Note: In general, larger frameworks tend to be harder to change and extend. That ultimately may be due to dependencies aka coupling.
 
 
 
@@ -303,7 +313,7 @@ Note: The SOLID Principles are not specific to React. They are applicable to any
 function DogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
     </li>
   );
@@ -340,7 +350,7 @@ function ListLayout({ children }: { children: ReactNode }) {
 function DogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
     </li>
   );
@@ -384,7 +394,7 @@ Note: In other words, write your components in such a way, that if you wanted to
 function DogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
     </li>
   );
@@ -405,7 +415,7 @@ function DogCard({ data }: { data: Dog }) {
 function DogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       {data.role === 'good' ? (
         <GoodBoyIcon />
@@ -431,7 +441,7 @@ function DogCard({ data }: { data: Dog }) {
 function DogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       {data.role === 'good' ? (
         <GoodBoyIcon />
@@ -468,7 +478,7 @@ Note: more flexible, testing scope not heavily depend on superclass, allows to u
 function DogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       {data.role === 'good' ? (
         <GoodBoyIcon />
@@ -494,7 +504,7 @@ function DogCard({ data }: { data: Dog }) {
 function DogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       {data.role === 'good' ? (
         <GoodBoyIcon />
@@ -510,7 +520,7 @@ function DogCard({ data }: { data: Dog }) {
 function GoodDogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       <GoodBoyIcon />
     </li>
@@ -520,7 +530,7 @@ function GoodDogCard({ data }: { data: Dog }) {
 function BadDogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       <BadBoyIcon />
     </li>
@@ -552,7 +562,7 @@ Note: Violate DRY principle
 function DogCard({ data, children }: { data: Dog; children: ReactNode }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       {children}
     </li>
@@ -562,7 +572,7 @@ function DogCard({ data, children }: { data: Dog; children: ReactNode }) {
 function GoodDogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       <GoodBoyIcon />
     </li>
@@ -572,7 +582,7 @@ function GoodDogCard({ data }: { data: Dog }) {
 function BadDogCard({ data }: { data: Dog }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       <BadBoyIcon />
     </li>
@@ -602,7 +612,7 @@ const DogCard = dogCardByRoles[dog.role];
 function DogCard({ data, children }: { data: Dog; children: ReactNode }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       {children}
     </li>
@@ -650,7 +660,7 @@ Note: This should works best for cases like extends for specific user role Admin
 function DogCard({ data, children }: { data: Dog; children: ReactNode }) {
   return (
     <li>
-      <img src={data.image} alt={data.name} />
+      <img src={data.image} alt='thumbnail' />
       <div>{data.name}</div>
       {children}
     </li>
@@ -861,27 +871,333 @@ const AlertDialogDemo = () => (
 
 ### The Liskov Substitution Principle
 
+---
+
+![Liskov Substitution Principle](/images/liskov.png) <!--.element: style="margin: 0px auto" class="fragment" data-fragment-index="2" -->
+
+> S subtypes T, what holds for T-objects holds for S-objects <!--.element: style="margin: 0px auto" class="fragment" data-fragment-index="3" -->
+
+(Wikipedia) <!--.element: style="margin: 0px auto" class="fragment" data-fragment-index="3" -->
+
+Note: Barbara Liskov is known for amazing works in computer programming and basically single-handed to invent data abstraction.
+
+
+
+### The Liskov Substitution Principle
+
+> Subtypes must be substitutable for their base types.
+
+Note: When extending a class or implementing an interface, the new class must be able to replace the old class without changing the behavior of the program without unexpected consequences or side effects.
+
+
+
+<!-- .element: data-auto-animate -->
+<pre data-id="lsp-animation"><code data-line-numbers="2"><script type="text/template"><>
+  <input value={search} onChange={changeSearch} />
+  <ul>
+    {dogs.map((dog) => (
+      <DogCard key={dog.name} data={dog} />
+    ))}
+  </ul>
+</>
+</script></code></pre>
+
+
+
+<!-- .element: data-auto-animate -->
+<pre data-id="lsp-animation"><code data-line-numbers="2"><script type="text/template"><>
+  <SearchInput value={search} onChange={changeSearch} />
+  <ul>
+    {dogs.map((dog) => (
+      <DogCard key={dog.name} data={dog} />
+    ))}
+  </ul>
+</>
+</script></code></pre>
+
+
+
+<!-- .element: data-auto-animate -->
+<pre data-id="lsp1-animation"><code data-line-numbers="1-15"><script type="text/template">interface SearchInputProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+function SearchInput({ value, onChange }: SearchInputProps) {
+  return (
+    <input
+      type="text"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="search-input"
+    />
+  )
+}
+</script></code></pre>
+
+
+
+<!-- .element: data-auto-animate -->
+<pre data-id="lsp2-animation"><code data-line-numbers="1-15"><script type="text/template"><>
+  <input
+    value={search}
+    onChange={changeSearch}
+    placeholder="Search..."
+  />
+</>
+</script></code></pre>
+
+
+
+<!-- .element: data-auto-animate -->
+<pre data-id="lsp2-animation"><code data-line-numbers="1-15"><script type="text/template"><>
+  <SearchInput
+    value={search}
+    onChange={changeSearch}
+    placeholder="Search..."
+  />
+</>
+</script></code></pre>
+
+
+
+<!-- .element: data-auto-animate -->
+<pre data-id="lsp1-animation"><code data-line-numbers="1-15"><script type="text/template">interface SearchInputProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+function SearchInput({ value, onChange }: SearchInputProps) {
+  return (
+    <input
+      type="text"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="search-input"
+    />
+  )
+}
+</script></code></pre>
+
+
+
+<!-- .element: data-auto-animate -->
+<pre data-id="lsp1-animation"><code data-line-numbers="1|1,6|1,6,13"><script type="text/template">interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+function SearchInput({ value, onChange, ...props }: SearchInputProps) {
+  return (
+    <input
+      type="text"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="search-input"
+      {...props}
+    />
+  )
+}
+</script></code></pre>
+
+Note: This principle is quite often violated by React developers, especially UI library authors. Sometime you found a cool shiny component but then realize it doesn't expose all the props you need. Then came patch-package so on. LSP is a really important principle to keep in mind when designing components.
+
 
 
 ### The Interface Segregation Principle
+
+---
+
+> Clients should not be forced to depend upon methods that they do not use. <!--.element: class="fragment" data-fragment-index="1" -->
+
+(Robert C. Martin, Agile Software Development) <!--.element: class="fragment" data-fragment-index="1" -->
+
+Note: Segregation - Tách biệt
+From my personal point of view, this is a special case of the first one, Single Responsibility Principle, but a very important case.
+
+
+
+##### It's the 90's and Xerox has a problem...
+
+![Xerox 90s](/images/xerox.jpeg)
+
+
+
+##### It's the 90's and Xerox has a problem...
+
+<div style="text-align: left; font-size: 1.4rem;">
+
+-> All of their software for printers uses a Job class, that is responsible for every type of job a printer can do. <!--.element: class="fragment fade-in" data-fragment-index="2" -->
+
+-> Changes to the software were becoming impossible to manage as the Job class continued to grow with every new feature. <!--.element: class="fragment fade-in" data-fragment-index="3" -->
+
+-> Robert C. Martin finds a solution. <!--.element: class="fragment fade-in" data-fragment-index="4" -->
+
+-> New interfaces are written for each type of job that the printer can perform (i.e IStapleJob, IPrintJob, IScanJob, etc.). <!--.element: class="fragment fade-in" data-fragment-index="5" -->
+
+-> New wrapper classes are written that implement these smaller interfaces: StapleJob implements IStapleJob, PrintJob implements IPrintJob, etc. <!--.element: class="fragment fade-in" data-fragment-index="6" -->
+
+-> The wrapper classes call into the old Job class (which now implements all of the smaller interfaces). <!--.element: class="fragment fade-in" data-fragment-index="7" -->
+
+-> New functionality for each job is written in smaller classes. <!--.element: class="fragment fade-in" data-fragment-index="8" -->
+
+-> Finally, all of the clients for these jobs can use only the interfaces that they require. <!--.element: class="fragment fade-in" data-fragment-index="9" -->
+
+</div>
+
+
+
+<!-- .element: data-auto-animate -->
+#### The Interface Segregation Principle
+
+<pre data-id="isp-animation"><code data-line-numbers="1-14"><script type="text/template">interface Dog {
+  name: string;
+  image: string;
+}
+
+function DogCard({ data }: { data: Dog }) {
+  return (
+    <li>
+      <img src={data.image} alt='thumbnail' />
+      <div>{data.name}</div>
+    </li>
+  );
+}
+</script></code></pre>
+
+
+
+<!-- .element: data-auto-animate -->
+#### The Interface Segregation Principle
+
+<pre data-id="isp-animation"><code data-line-numbers="9,15-17"><script type="text/template">interface Dog {
+  name: string;
+  image: string;
+}
+
+function DogCard({ data }: { data: Dog }) {
+  return (
+    <li>
+      <DogThumbnail data={data} />
+      <div>{data.name}</div>
+    </li>
+  );
+}
+
+function DogThumbnail({ data }: { data: Dog }) {
+  return <img src={data.image} alt='thumbnail' className='my-thumbnail' />
+}
+</script></code></pre>
+
+
+
+<!-- .element: data-auto-animate -->
+#### The Interface Segregation Principle
+
+<pre data-id="isp-animation"><code data-line-numbers="9,15-17"><script type="text/template">interface Dog {
+  name: string;
+  image: string;
+}
+
+function DogCard({ data }: { data: Dog }) {
+  return (
+    <li>
+      <DogThumbnail image={data.image} />
+      <div>{data.name}</div>
+    </li>
+  );
+}
+
+function DogThumbnail({ image }: { image: string }) {
+  return <img src={image} alt='thumbnail' className='my-thumbnail' />
+}
+</script></code></pre>
+
+Note: This also prevent unnecessary re-rendering in DogThumbnail component
+
+
+
+#### React vs React DOM
+
+The separation of React and ReactDOM into difference packages is a large-scale implementation of this principle. React is responsible for the virtual DOM and translating JSX, while ReactDOM does the heavy lifting of DOM manipulations.
 
 
 
 ### The Dependency Inversion Principle
 
+> The Dependency Inversion Principle tells us that the most flexible systems are those in which source code dependencies refer only to abstraction, not to concretions. <!--.element: class="fragment" data-fragment-index="1" -->
+
+(Robert C. Martin, Clean Architecture) <!--.element: class="fragment" data-fragment-index="1" -->
 
 
-<img src="/images/stackoverflow-1.png" class="fragment semi-fade-out" data-fragment-index="1" style="width: 100%; height: 100%" />
-<img src="/images/stackoverflow-2.png" class="fragment fade-in-then-out" data-fragment-index="1" style="position: absolute; width: 100%; top: 10%" />
-<img src="/images/stackoverflow-3.png" class="fragment" data-fragment-index="2" style="position: absolute; width: 100%; top: 35%" />
 
-Note: Design patterns are like herbs and spices, using a select one or two at the right points will make your food taste much better. Using all the herbs and spices will make your food taste confusing and wrong, and this is the same with design patterns.
+### The Dependency Inversion Principle
+
+-> a/ High-level modules should not depend on low-level modules. Both should depend on abstractions. <!--.element: class="fragment" data-fragment-index="1" -->
+
+-> b/ Abstractions should not depend on details. Details should depend on abstractions. <!--.element: class="fragment" data-fragment-index="2" -->
+
+(Robert C. Martin, Agile Software Development) <!--.element: class="fragment" data-fragment-index="3" -->
+
+
+
+### The Dependency Inversion Principle
+
+---
+
+<span style="text-decoration: underline">Common Cases:</span>
+
+-> Component abstraction (i.e. forms, high-level buttons, etc. ) <!--.element: class="fragment" data-fragment-index="1" -->
+
+-> Low-level 3rd party modules (i.e. date-fns, axios, etc.) <!--.element: class="fragment" data-fragment-index="2" -->
+
+-> Persistent storage (i.e. localStorage, sessionStorage, etc.) <!--.element: class="fragment" data-fragment-index="3" -->
+
+
+
+### The Dependency Inversion Principle
+
+-> Unit test will be a lot easier <!--.element: class="fragment" data-fragment-index="1" -->
+
+-> Components are not coupled to core libraries <!--.element: class="fragment" data-fragment-index="2" -->
+
+-> Switching dependencies is efficient <!--.element: class="fragment" data-fragment-index="3" -->
+
+
+
+## Tradeoffs
+
+-> Increased complexity <!--.element: class="fragment" data-fragment-index="1" -->
+
+-> Easy over-engineering <!--.element: class="fragment" data-fragment-index="2" -->
+
+-> More abstraction <!--.element: class="fragment" data-fragment-index="3" -->
+
+
+
+<img src="/images/stackoverflow-2.png" style="width: 100%" />
+
+Note: My advice would be, when you make a decision, especially if it based on your personal preference or experience, try to answer the "why" question. Why we do what we do. Why we choose this over that. Why we don't do this. Why we don't choose that. And I hope this talk did help you in some.
 
 
 
 ### References
 
+- [Applying Solid Principles in ReactJS](https://www.google.com/search?q=apply+solid+principles+reactjs)
+
+- [Klaus Iglberger's Breaking Dependencies: The SOLID Principles](https://www.youtube.com/watch?v=Ntraj80qN2k)
+
 - [Uncle Bob's Clean Code Lessons](https://www.youtube.com/watch?v=7EmboKQH8lM&list=PLmmYSbUCWJ4x1GO839azG_BBw8rkh-zOj)
+
+- [Hillel Wayne's What we can learn from software history](https://www.deconstructconf.com/2019/hillel-wayne-what-we-can-learn-from-software-history)
+
+Note: Here are some resources that I found useful when researching for this talk. The first one is Google search result for applying solid principles in ReactJS. I found that it's very interesting because it's not a common topic when we talk about Coding Principle in Frontend Development. And so there are many difference understanding and implementation of each principle, some even misinterpreted. So try keep that in mind when you read those articles, and try to find as many angles when looking at a solution. I found that the comment session is usually very helpful.
+The second one is where I literally stole most of the slides from. It's a more in-depth talk about software design and specifically: the SOLID principle. The talk even mention some conflicts that may happen between them.
+The third one is Uncle Bob's Clean Code Lessons. This was a very foundational and inspiring talk about coding principle, and also about how far the sun is.
+The last explains how the world works, kind of. I try simplify it into this workshop epilogue, but I don't think I can do it justice. So I highly recommend you to watch the full talk.
+
+
+### Q&A
 
 
 
