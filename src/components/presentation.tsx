@@ -2,6 +2,7 @@
 
 import 'reveal.js/dist/reveal.css'
 import 'reveal.js/dist/theme/solarized.css'
+import 'reveal.js/plugin/highlight/zenburn.css'
 import RevealJS from 'reveal.js';
 import RevealMarkdown from 'reveal.js/plugin/markdown/markdown';
 import RevealHighlight from 'reveal.js/plugin/highlight/highlight';
