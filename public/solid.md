@@ -27,9 +27,7 @@ Note: And so What is Software? There a reason Software is "Soft" because we have
 
 ## = <!-- .element: class="fragment" data-fragment-index="2" -->
 
-#### Easy to change and extend <!-- .element: class="fragment" data-fragment-index="3" -->
-
-Note: Unfortunately, you may experience the opposite of this in your career. It may depend on where you work and what you work on. Then one morning your boss yell at you because your component is 300 lines long.
+### Easy to change and extend <!-- .element: class="fragment" data-fragment-index="3" -->
 
 
 
@@ -37,7 +35,7 @@ Note: Unfortunately, you may experience the opposite of this in your career. It 
 <img src="/images/stackoverflow-2.png" class="fragment fade-in-then-out" data-fragment-index="1" style="position: absolute; width: 100%; top: 10%" />
 <img src="/images/stackoverflow-3.png" class="fragment" data-fragment-index="2" style="position: absolute; width: 100%; top: 35%" />
 
-Note: This talk today hopefully will help you to avoid this situation. And I'll not saying that you should write a 3 or 300 lines long component. But you'll have an idea when and how to split them up.
+Note: Unfortunately, you may experience the opposite of this in your career. It may depend on where you work and what you work on. Then one morning your boss yell at you because your component is 300 lines long.
 
 
 
@@ -177,7 +175,7 @@ Note: The SOLID Principles are not specific to React. They are applicable to any
 
 
 <!-- .element: data-auto-animate -->
-<pre data-id="code-animation"><code data-line-numbers="2-4|6-18|20-37|31-34"><script type="text/template">function DogList() {
+<pre data-id="code-animation"><code data-line-numbers="1-34|2-4|6-18|20-37|31-34"><script type="text/template">function DogList() {
   const [dogs, setDogs] = useState<Dog[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error>();
@@ -364,6 +362,9 @@ function DogCard({ data }: { data: Dog }) {
 ---
 
 > <span style="text-decoration: underline">Guidelines</span>: Prefer cohesive software entities: <span class="fragment highlight-red" data-fragment-index="1">Everything that does not strictly belong together, should be separated.</span>
+
+
+### Q&A
 
 
 
@@ -868,6 +869,9 @@ const AlertDialogDemo = () => (
 </script></code></pre>
 
 
+### Q&A
+
+
 
 ### The Liskov Substitution Principle
 
@@ -1003,6 +1007,9 @@ function SearchInput({ value, onChange, ...props }: SearchInputProps) {
 Note: This principle is quite often violated by React developers, especially UI library authors. Sometime you found a cool shiny component but then realize it doesn't expose all the props you need. Then came patch-package so on. LSP is a really important principle to keep in mind when designing components.
 
 
+### Q&A
+
+
 
 ### The Interface Segregation Principle
 
@@ -1122,6 +1129,9 @@ Note: This also prevent unnecessary re-rendering in DogThumbnail component
 The separation of React and ReactDOM into difference packages is a large-scale implementation of this principle. React is responsible for the virtual DOM and translating JSX, while ReactDOM does the heavy lifting of DOM manipulations.
 
 
+### Q&A
+
+
 
 ### The Dependency Inversion Principle
 
@@ -1177,7 +1187,7 @@ The separation of React and ReactDOM into difference packages is a large-scale i
 
 <img src="/images/stackoverflow-2.png" style="width: 100%" />
 
-Note: My advice would be, when you make a decision, especially if it based on your personal preference or experience, try to answer the "why" question. Why we do what we do. Why we choose this over that. Why we don't do this. Why we don't choose that. And I hope this talk did help you in some.
+Note: My advice would be, when you make a decision, especially if it based on your personal preference or experience, try to answer not the "how", but the "why" question. Why we do what we do. Why we choose this over that. Why we don't do this. Why we don't choose that. And I hope this talk did help you in some.
 
 
 
@@ -1189,11 +1199,14 @@ Note: My advice would be, when you make a decision, especially if it based on yo
 
 - [Uncle Bob's Clean Code Lessons](https://www.youtube.com/watch?v=7EmboKQH8lM&list=PLmmYSbUCWJ4x1GO839azG_BBw8rkh-zOj)
 
+- [Zach Tellman's On Abstraction](https://www.youtube.com/watch?v=x9pxbnFC4aQ)
+
 - [Hillel Wayne's What we can learn from software history](https://www.deconstructconf.com/2019/hillel-wayne-what-we-can-learn-from-software-history)
 
 Note: Here are some resources that I found useful when researching for this talk. The first one is Google search result for applying solid principles in ReactJS. I found that it's very interesting because it's not a common topic when we talk about Coding Principle in Frontend Development. And so there are many difference understanding and implementation of each principle, some even misinterpreted. So try keep that in mind when you read those articles, and try to find as many angles when looking at a solution. I found that the comment session is usually very helpful.
 The second one is where I literally stole most of the slides from. It's a more in-depth talk about software design and specifically: the SOLID principle. The talk even mention some conflicts that may happen between them.
 The third one is Uncle Bob's Clean Code Lessons. This was a very foundational and inspiring talk about coding principle, and also about how far the sun is.
+On Abstraction is the talk about abstraction.
 The last explains how the world works, kind of. I try simplify it into this workshop epilogue, but I don't think I can do it justice. So I highly recommend you to watch the full talk.
 
 
