@@ -12,6 +12,8 @@ khanh.bui@coderschool.vn
 
 [https://solid-react.quocs.com](https://solid-react.quocs.com)
 
+[github:bkdev98/solid-react](https://github.com/bkdev98/solid-react.git)
+
 Note: You could scan the QR code or go to the link below to follow along the slides.
 So I guess in this room we're all programmers, so then you are part of my tribe. You, and I, and we all together, share a passion for something, and we can communicate about it, in a way that most other people can't. And so that is something we should cherish together.
 
@@ -1221,3 +1223,5 @@ The last explains how the world works, kind of. I try simplify it into this work
 <img src="/images/solid-react.png" style="width: 200px; height: 200px; margin: 0px auto 40px;"/>
 
 [https://solid-react.quocs.com](https://solid-react.quocs.com)
+
+[github:bkdev98/solid-react](https://github.com/bkdev98/solid-react.git)
